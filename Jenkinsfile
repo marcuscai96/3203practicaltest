@@ -6,7 +6,7 @@ pipeline {
 				stage('Deploy') {
 					agent any
 					steps {
-						git url: 'https://github.com/marcuscai96/3203practicaltest/blob/main/deploy.sh'
+						echo 'hihi'
 					}
 				}
 				stage('Headless Browser Test') {
