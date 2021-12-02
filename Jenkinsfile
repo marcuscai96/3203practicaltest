@@ -26,11 +26,7 @@ pipeline {
 						
 					
 					}
-					post {
-						always {
-							echo 'sucess'
-						}
-					}
+
 				}
 			}
 		}
