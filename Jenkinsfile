@@ -6,6 +6,7 @@ pipeline {
 				stage('Deploy') {
 					agent any
 					steps {
+						sh "chmod +x -R ${env.WORKSPACE}"
 						sh '/usr/share/jenkins/3203practicaltest/deploy.sh'
 						input message : 'finished'
 						sh '/usr/share/jenkins/3203practicaltest/kill.sh'
