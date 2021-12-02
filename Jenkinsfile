@@ -21,7 +21,7 @@ pipeline {
 					steps {
 						sh 'mvn -B -DskipTests clean package'
 						sh 'mvn test'
-						sh '--junit'
+						sh '--log-junit logs/unitreport.xml'
 					
 					}
 					post {
