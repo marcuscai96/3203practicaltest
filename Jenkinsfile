@@ -6,8 +6,9 @@ pipeline {
 				stage('Deploy') {
 					agent any
 					steps {
-						sh "git url: 'https://github.com/marcuscai96/JenkinsDependencyCheckTest/blob/master/deploy.sh'"
-						sh "git url: 'https://github.com/marcuscai96/JenkinsDependencyCheckTest/blob/master/kill.sh'"
+						sh 'usr/share.jenkins/3203practicaltest/deploy.sh'
+						input message : 'finished'
+						sh 'usr/share.jenkins/3203practicaltest/kill.sh'
 						
 					}
 				}
