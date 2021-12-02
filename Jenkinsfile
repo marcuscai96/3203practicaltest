@@ -6,7 +6,9 @@ pipeline {
 				stage('Deploy') {
 					agent any
 					steps {
-						echo 'hihi'
+						sh "git url: 'https://github.com/marcuscai96/JenkinsDependencyCheckTest/blob/master/deploy.sh'"
+						sh "git url: 'https://github.com/marcuscai96/JenkinsDependencyCheckTest/blob/master/kill.sh'"
+						
 					}
 				}
 				stage('Headless Browser Test') {
@@ -19,6 +21,8 @@ pipeline {
 					steps {
 						sh 'mvn -B -DskipTests clean package'
 						sh 'mvn test'
+						sh '--junit'
+					
 					}
 					post {
 						always {
